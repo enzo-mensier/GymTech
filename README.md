@@ -1,0 +1,30 @@
+﻿## 🏋🏼‍♂️ GymTech - Projet 150h
+
+## 🖥️ Description
+
+Le projet "GymTech" est un Projet de fin d'année de BTS CIEL Informatique & Réseaux qui permet d'aborder toutes les connaissances vu durant cette formation. Ce projet est réalisé en groupe de 3, a pour objectif de renforcer les compétences en **Développement web**, en **Développement d'applications mobiles**, et en **Systèmes & Maintenance Informatique**.
+
+Les questions abordent des sujets fondamentaux étudié dans cette formation, cela permet de valider des connaissances de base mais aussi d'approfondir les les sujets plus complexes.
+
+## 🔥 Fonctionnalités
+
+- **Vélo intelligent** : Le système connécté permet à l'utilsateur de recharger n'importe quel appareil via un port USB.
+- **Applications mobile** : Cette application est indispensable pour avoir un suivi de ces performances grâce aux données ralatifs au compte utilisateur à créer et configuré, et l'accés au vestiaire et casier attitré.
+- **Interface web** : L'interface est conçue pour gérer certaines fonctionnalités, le confort thermique, le taux d'humidité, réserver des créneaux de cours.
+
+## 🛠️ Technologies utilisées
+
+- **ClickUp** : Utilisé pour la gestion et planification du projet qui permet d'avoir un suivi de l'avancée du projet et évidemment de travailler en équipe et tout cela de façon centralisée.
+- **Visual Studio Code** : Editeur de texte (IDE) , utile pour le développement web et développement d'applications mobiles.
+- **HTML/CSS/JavaScript** : Langage de développement web, utile à la conception de l'interface web, possibilité d'utilisation d'un Framework.
+- **À définir** : Langage de programmation et/ou Framework à déterminé pour concevoir l'application mobile.
+
+## 🎯Objectifs
+
+Ce projet vise à retravailler & renforcer noq compétences relatifs à notre formaation, en particulier en **Systèmes & Maintenance Informatique**, **Développement d'applications mobiles** et **Développement web** tout en permettant de réaliser un projet complet, dynamique et interactif. L'objectif est de pratiquer les fondamentaux des compétences requises à l'issu de notre formation et de perfectionner nos capacités à créer des applications interactives fonctionnels dans un but précis.
+
+## 🚀 Installation
+
+1. Clonez ce dépôt sur votre machine locale :
+   ```bash
+   git clone https://github.com/enzo-mensier/GymTech.git
