@@ -6,6 +6,15 @@ Le projet "GymTech" est un Projet de fin d'année de BTS CIEL Informatique & Ré
 
 Les questions abordent des sujets fondamentaux étudié dans cette formation, cela permet de valider des connaissances de base mais aussi d'approfondir les les sujets plus complexes.
 
+## 🚀 Aperçu de l'application mobile : **GymTech**
+
+Lancement de l'application mobile GymTech : 28/01/2025.
+Après une dizaine d'heures, voici ce que j'ai développer avec la Technologie **Flutter** :
+
+<div style="text-align: center;">  
+<img src="preview-n1.jpg" width="95%" alt="Aperçu de l'application mobile : GymTech"/>  
+</div>
+
 ## 🔥 Fonctionnalités
 
 - **Vélo intelligent** : Le système connécté permet à l'utilsateur de recharger n'importe quel appareil via un port USB.

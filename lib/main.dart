@@ -14,7 +14,7 @@ class _GymTechAppState extends State<GymTechApp> {
 
   static const List<Widget> _pages = <Widget>[
     Center(child: Text('Page de réservation des créneaux', style: TextStyle(fontSize: 18))),
-    Center(child: Text('Accés aux vestiaires et numéros de casier', style: TextStyle(fontSize: 18))),
+    Center(child: Text('Accès aux vestiaires et numéros de casier', style: TextStyle(fontSize: 18))),
     Center(child: Text('Données utilisateur', style: TextStyle(fontSize: 18))),
     Center(child: Text('Paramètres', style: TextStyle(fontSize: 18))),
   ];
@@ -31,13 +31,15 @@ class _GymTechAppState extends State<GymTechApp> {
       theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
         appBar: AppBar(
-          automaticallyImplyLeading: false,
-          backgroundColor: Colors.grey,
-          flexibleSpace: Center(
-            child: SizedBox(
-              height: 80, // Ajuste cette valeur selon tes besoins
-              width: 150, // Ajuste cette valeur selon tes besoins
-              child: Image.asset('assets/gymtech-logo.png', fit: BoxFit.contain),
+          automaticallyImplyLeading: false, // Suppression du titre
+          flexibleSpace: Padding(
+            padding: EdgeInsets.only(top: 45), // Espacement du haut
+            child: Align(
+              alignment: Alignment.topCenter, // Centrer l'image sur l'axe horizontal
+                child: Image.asset(
+                  'assets/gymtech-logo.png',
+                  fit: BoxFit.contain, // Garder la taille originale de l'image
+                ),
             ),
           ),
         ),
