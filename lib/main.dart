@@ -4,131 +4,56 @@ void main() {
   runApp(GymTechApp());
 }
 
-class GymTechApp extends StatelessWidget {
+class GymTechApp extends StatefulWidget {
+  @override
+  _GymTechAppState createState() => _GymTechAppState();
+}
+
+class _GymTechAppState extends State<GymTechApp> {
+  int _selectedIndex = 0;
+
+  static const List<Widget> _pages = <Widget>[
+    Center(child: Text('Page de réservation des créneaux', style: TextStyle(fontSize: 18))),
+    Center(child: Text('Accés aux vestiaires et numéros de casier', style: TextStyle(fontSize: 18))),
+    Center(child: Text('Données utilisateur', style: TextStyle(fontSize: 18))),
+    Center(child: Text('Paramètres', style: TextStyle(fontSize: 18))),
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'GymTech App',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: LoginPage(),
-    );
-  }
-}
-
-class LoginPage extends StatefulWidget {
-  @override
-  _LoginPageState createState() => _LoginPageState();
-}
-
-class _LoginPageState extends State<LoginPage> {
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-
-  void _login() {
-    String username = _usernameController.text;
-    String password = _passwordController.text;
-
-    if (username == 'admin' && password == 'admin') {
-      // Navigation vers la page admin
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => AdminPage()),
-      );
-    } else if (username.isNotEmpty && password.isNotEmpty) {
-      // Navigation vers la page utilisateur
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => UserPage(username: username)),
-      );
-    } else {
-      // Affichage d'un message d'erreur si les champs sont vides
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: Text('Erreur de connexion'),
-          content: Text('Veuillez entrer un nom d\'utilisateur et un mot de passe valides.'),
-          actions: [
-            TextButton(
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-              child: Text('OK'),
+      theme: ThemeData(primarySwatch: Colors.green),
+      home: Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          backgroundColor: Colors.grey,
+          flexibleSpace: Center(
+            child: SizedBox(
+              height: 80, // Ajuste cette valeur selon tes besoins
+              width: 150, // Ajuste cette valeur selon tes besoins
+              child: Image.asset('assets/gymtech-logo.png', fit: BoxFit.contain),
             ),
-          ],
+          ),
         ),
-      );
-    }
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Connexion GymTech'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            TextField(
-              controller: _usernameController,
-              decoration: InputDecoration(labelText: 'Nom d\'utilisateur'),
-            ),
-            TextField(
-              controller: _passwordController,
-              decoration: InputDecoration(labelText: 'Mot de passe'),
-              obscureText: true,
-            ),
-            SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: _login,
-              child: Text('Se connecter'),
-            ),
-            TextButton(
-              onPressed: () {
-                // Raccourci pour admin
-                _usernameController.text = 'admin';
-                _passwordController.text = 'admin';
-              },
-              child: Text('Se connecter en tant qu\'admin'),
-            ),
+        body: _pages[_selectedIndex],
+        bottomNavigationBar: BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Réservation'),
+            BottomNavigationBarItem(icon: Icon(Icons.lock), label: 'Vestiaires'),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Utilisateur'),
+            BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Paramètres'),
           ],
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.grey,
+          onTap: _onItemTapped,
         ),
-      ),
-    );
-  }
-}
-
-class UserPage extends StatelessWidget {
-  final String username;
-
-  UserPage({required this.username});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Bienvenue $username'), // Titre de la page Utilisateur
-      ),
-      body: Center(
-        child: Text('Page utilisateur\nBienvenue, $username !'),
-      ),
-    );
-  }
-}
-
-class AdminPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Page Administrateur'), // Titre de la page Administrateur
-      ),
-      body: Center(
-        child: Text('Bienvenue Administrateur\nGestion des paramètres et utilisateurs.'),
       ),
     );
   }
