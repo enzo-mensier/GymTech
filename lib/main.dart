@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-// Point d'entrée principal de l'application
 void main() {
   runApp(GymTechApp());
 }
 
-// Définition de l'application GymTech en tant que StatefulWidget
 class GymTechApp extends StatefulWidget {
   @override
   _GymTechAppState createState() => _GymTechAppState();
 }
 
-class _GymTechAppState extends State<GymTechApp> {
-  // Index de la page actuellement sélectionnée
+class _GymTechAppState extends State<GymTechApp> with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
+  bool _isLoading = true;
+  double _xPosition = 0;
+  late double _screenWidth;
+  late double _screenHeight;
 
-  // Liste des pages de l'application affichées dans le corps de l'interface
   static const List<Widget> _pages = <Widget>[
     Center(child: Text('Page de réservation des créneaux', style: TextStyle(fontSize: 18))),
     Center(child: Text('Accès aux vestiaires et numéros de casier', style: TextStyle(fontSize: 18))),
@@ -23,39 +23,123 @@ class _GymTechAppState extends State<GymTechApp> {
     Center(child: Text('Paramètres', style: TextStyle(fontSize: 18))),
   ];
 
-  // Fonction appelée lorsqu'un élément de la barre de navigation est sélectionné
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
     });
   }
 
+  // Calcul de la taille du logo d'animation en fonction de la taille de l'écran
+  double _calculateAnimationLogoSize() {
+    // Utilise 20% de la plus petite dimension de l'écran
+    double minScreenDimension = _screenWidth < _screenHeight ? _screenWidth : _screenHeight;
+    return minScreenDimension * 0.4;
+  }
+
+  // Calcul de la taille du logo final en fonction de la taille de l'écran
+  double _calculateFinalLogoSize() {
+    return _calculateAnimationLogoSize() / 4;
+  }
+
+  // Position initiale du logo (hors écran à gauche)
+  double _getInitialPosition() {
+    return -_calculateAnimationLogoSize() * 1.5;
+  }
+
+  // Position centrale du logo
+  double _getCenterPosition() {
+    return (_screenWidth - _calculateAnimationLogoSize()) / 2;
+  }
+
+  // Position finale du logo (hors écran à droite)
+  double _getFinalPosition() {
+    return _screenWidth + _calculateAnimationLogoSize() * 1.5;
+  }
+
+  @override
+  void initState() {
+    super.initState();
+
+    // La séquence d'animation sera initialisée dans didChangeDependencies
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+
+    // Récupération des dimensions de l'écran
+    _screenWidth = MediaQuery.of(context).size.width;
+    _screenHeight = MediaQuery.of(context).size.height;
+
+    // Initialisation de la position de départ
+    _xPosition = _getInitialPosition();
+
+    // Séquence d'animation
+    Future.delayed(Duration(milliseconds: 200), () {
+      // Logo arrive au centre
+      setState(() {
+        _xPosition = _getCenterPosition();
+      });
+    });
+
+    Future.delayed(Duration(milliseconds: 1800), () {
+      // Logo sort par la droite
+      setState(() {
+        _xPosition = _getFinalPosition();
+      });
+    });
+
+    Future.delayed(Duration(milliseconds: 4400), () {
+      // Affichage de l'interface principale
+      setState(() {
+        _isLoading = false;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    double animationLogoSize = _calculateAnimationLogoSize();
+    double finalLogoSize = _calculateFinalLogoSize();
+
     return MaterialApp(
-      theme: ThemeData(primarySwatch: Colors.green), // Définition du thème de l'application
+      theme: ThemeData(primarySwatch: Colors.green),
       home: Scaffold(
-        // Définit l'arrière-plan en blanc
         backgroundColor: Colors.white,
-        // Barre d'application avec logo centré
         appBar: AppBar(
-          backgroundColor: Colors.white, // Met aussi l'AppBar en blanc
-          elevation: 0, // Supprime l'ombre pour un effet plus propre
-          automaticallyImplyLeading: false, // Suppression du titre par défaut
-          flexibleSpace: Padding(
-            padding: EdgeInsets.only(top: 45), // Ajout d'un espace en haut
-            child: Align(
-              alignment: Alignment.topCenter, // Centrage horizontal de l'image
-              child: Image.asset(
-                'assets/gymtech-logo.png',
-                fit: BoxFit.contain, // Conservation des proportions originales de l'image
-              ),
+          backgroundColor: Colors.white,
+          elevation: 0,
+          automaticallyImplyLeading: false,
+          title: !_isLoading
+              ? Container(
+            width: finalLogoSize,
+            height: finalLogoSize,
+            child: Image.asset(
+              'assets/gymtech-logo.png',
+              fit: BoxFit.contain,
             ),
-          ),
+          )
+              : null,
         ),
-        // Contenu principal de la page basé sur l'index sélectionné
-        body: _pages[_selectedIndex],
-        // Barre de navigation inférieure permettant de naviguer entre les pages
+        body: Stack(
+          children: [
+            if (_isLoading)
+              AnimatedPositioned(
+                duration: Duration(milliseconds: 800),
+                curve: Curves.easeInOut,
+                left: _xPosition,
+                top: (_screenHeight - animationLogoSize) / 2.5,
+                child: Image.asset(
+                  'assets/gymtech-logo.png',
+                  width: animationLogoSize,
+                  height: animationLogoSize,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            if (!_isLoading)
+              _pages[_selectedIndex],
+          ],
+        ),
         bottomNavigationBar: BottomNavigationBar(
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Réservation'),
@@ -63,10 +147,10 @@ class _GymTechAppState extends State<GymTechApp> {
             BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Utilisateur'),
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Paramètres'),
           ],
-          currentIndex: _selectedIndex, // Page actuellement sélectionnée
-          selectedItemColor: Colors.green, // Couleur de l'élément sélectionné
-          unselectedItemColor: Colors.grey, // Couleur des éléments non sélectionnés
-          onTap: _onItemTapped, // Gestion du changement de page
+          currentIndex: _selectedIndex,
+          selectedItemColor: Colors.green,
+          unselectedItemColor: Colors.grey,
+          onTap: _onItemTapped,
         ),
       ),
     );
