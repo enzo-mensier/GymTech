@@ -9,6 +9,7 @@ Les questions abordent des sujets fondamentaux étudié dans cette formation, ce
 ## 🚀 Aperçu de l'application mobile : **GymTech**
 
 Lancement de l'application mobile GymTech : 28/01/2025.
+
 Après une dizaine d'heures, voici ce que j'ai développer avec la Technologie **Flutter** :
 
 <div style="text-align: center;">  
@@ -30,7 +31,7 @@ Après une dizaine d'heures, voici ce que j'ai développer avec la Technologie *
 
 ## 🎯Objectifs
 
-Ce projet vise à retravailler & renforcer noq compétences relatifs à notre formaation, en particulier en **Systèmes & Maintenance Informatique**, **Développement d'applications mobiles** et **Développement web** tout en permettant de réaliser un projet complet, dynamique et interactif. L'objectif est de pratiquer les fondamentaux des compétences requises à l'issu de notre formation et de perfectionner nos capacités à créer des applications interactives fonctionnels dans un but précis.
+Ce projet vise à retravailler & renforcer nos compétences relatifs à notre formaation, en particulier en **Systèmes & Maintenance Informatique**, **Développement d'applications mobiles** et **Développement web** tout en permettant de réaliser un projet complet, dynamique et interactif. L'objectif est de pratiquer les fondamentaux des compétences requises à l'issu de notre formation et de perfectionner nos capacités à créer des applications interactives fonctionnels dans un but précis.
 
 ## 🚀 Installation
 
