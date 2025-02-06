@@ -11,6 +11,7 @@ Les questions abordent des sujets fondamentaux étudié dans cette formation, ce
 Lancement de l'application mobile GymTech : 28/01/2025.
 
 Après une dizaine d'heures, voici ce que j'ai développer avec la Technologie **Flutter** :
+Attendez un peu vous ne serez pas décu ! 
 
 <div style="text-align: center;">  
 <img src="assets/images/preview-n1.jpg" width="30%" alt="Aperçu de l'application mobile : GymTech"/>  
@@ -24,14 +25,14 @@ Après une dizaine d'heures, voici ce que j'ai développer avec la Technologie *
 
 ## 🛠️ Technologies utilisées
 
-- **ClickUp** : Utilisé pour la gestion et planification du projet qui permet d'avoir un suivi de l'avancée du projet et évidemment de travailler en équipe et tout cela de façon centralisée.
-- **Visual Studio Code** : Editeur de texte (IDE) , utile pour le développement web et développement d'applications mobiles.
+- **GanttProject** : Utilisé pour la gestion et planification du projet qui permet d'avoir un suivi de l'avancée du projet et évidemment de travailler en équipe et tout cela de façon centralisée.
+- **Android Studio** : Editeur de texte (IDE) , utile pour le développement d'applications mobiles.
 - **HTML/CSS/JavaScript** : Langage de développement web, utile à la conception de l'interface web, possibilité d'utilisation d'un Framework.
-- **À définir** : Langage de programmation et/ou Framework à déterminé pour concevoir l'application mobile.
+- **Flutter & Dart** : Langage de programmation et/ou Framework à déterminé pour concevoir l'application mobile.
 
 ## 🎯Objectifs
 
-Ce projet vise à retravailler & renforcer nos compétences relatifs à notre formaation, en particulier en **Systèmes & Maintenance Informatique**, **Développement d'applications mobiles** et **Développement web** tout en permettant de réaliser un projet complet, dynamique et interactif. L'objectif est de pratiquer les fondamentaux des compétences requises à l'issu de notre formation et de perfectionner nos capacités à créer des applications interactives fonctionnels dans un but précis.
+Ce projet vise à retravailler & renforcer nos compétences relatifs à notre formation, en particulier en **Systèmes & Maintenance Informatique**, **Développement d'applications mobiles** et **Développement web** tout en permettant de réaliser un projet complet, dynamique et interactif. L'objectif est de pratiquer les fondamentaux des compétences requises à l'issu de notre formation et de perfectionner nos capacités à créer des applications interactives fonctionnels dans un but précis.
 
 ## 🚀 Installation
 
