@@ -13,7 +13,7 @@ Lancement de l'application mobile GymTech : 28/01/2025.
 Après une dizaine d'heures, voici ce que j'ai développer avec la Technologie **Flutter** :
 
 <div style="text-align: center;">  
-<img src="assets/preview-n1.jpg" width="30%" alt="Aperçu de l'application mobile : GymTech"/>  
+<img src="assets/images/preview-n1.jpg" width="30%" alt="Aperçu de l'application mobile : GymTech"/>  
 </div>
 
 ## 🔥 Fonctionnalités
