@@ -12,6 +12,9 @@ class GymTechApp extends StatefulWidget {
 class _GymTechAppState extends State<GymTechApp> {
   int _selectedIndex = 0;
 
+  static const Color primaryColor = Color(0xFF4CAF50); // Vert personnalisé
+  static const Color secondaryColor = Color(0xFF9E9E9E); // Gris personnalisé
+
   static const List<Widget> _pages = <Widget>[
     Center(child: Text('Page de réservation des créneaux', style: TextStyle(fontSize: 18))),
     Center(child: Text('Accès aux vestiaires et numéros de casier', style: TextStyle(fontSize: 18))),
@@ -29,22 +32,38 @@ class _GymTechAppState extends State<GymTechApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.green),
-      home: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: AppBar(
+      theme: ThemeData(
+        primaryColor: primaryColor,
+        scaffoldBackgroundColor: Colors.white,
+        appBarTheme: AppBarTheme(
           backgroundColor: Colors.white,
           elevation: 0,
+          iconTheme: IconThemeData(color: primaryColor),
+          titleTextStyle: TextStyle(color: primaryColor, fontSize: 20, fontWeight: FontWeight.bold),
+        ),
+      ),
+      home: Scaffold(
+        appBar: AppBar(
           automaticallyImplyLeading: false,
-          title: Image.asset(
-            'assets/gymtech-logo.png',
-            width: 50,
-            height: 50,
-            fit: BoxFit.contain,
+          title: Align(
+            alignment: Alignment.centerLeft,
+            child: Image.asset(
+              'assets/images/gymtech_logo.png',
+              width: 50,
+              height: 50,
+              fit: BoxFit.contain,
+            ),
           ),
         ),
         body: _pages[_selectedIndex],
         bottomNavigationBar: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: Colors.white,
+          selectedItemColor: primaryColor,
+          unselectedItemColor: secondaryColor,
+          showSelectedLabels: true,
+          showUnselectedLabels: true,
+          elevation: 10,
           items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(icon: Icon(Icons.calendar_today), label: 'Réservation'),
             BottomNavigationBarItem(icon: Icon(Icons.lock), label: 'Vestiaires'),
@@ -52,8 +71,6 @@ class _GymTechAppState extends State<GymTechApp> {
             BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Paramètres'),
           ],
           currentIndex: _selectedIndex,
-          selectedItemColor: Colors.green,
-          unselectedItemColor: Colors.grey,
           onTap: _onItemTapped,
         ),
       ),
