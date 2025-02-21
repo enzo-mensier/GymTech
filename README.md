@@ -10,11 +10,12 @@ Les questions abordent des sujets fondamentaux étudié dans cette formation, ce
 
 Lancement de l'application mobile GymTech : 28/01/2025.
 
-Après une dizaine d'heures, voici ce que j'ai développer avec la Technologie **Flutter** :
-Attendez un peu vous ne serez pas décu ! 
+Après une vingtaine d'heures, voici ce que j'ai développer avec la Technologie **Flutter** :
+Ayez de la patiente vous ne serez pas décu !
 
-<div style="text-align: center;">  
-<img src="assets/images/preview-n1.jpg" width="30%" alt="Aperçu de l'application mobile : GymTech"/>  
+<div style="text-align: center;">
+<img src="assets/images/login_page.jpg" width="40%" alt="Aperçu de la page de connexion : GymTech" style="margin-right: 10px;"/>
+<img src="assets/images/home_page.jpg" width="40%" alt="Aperçu de la page d'acceuil : GymTech"/>
 </div>
 
 ## 🔥 Fonctionnalités
