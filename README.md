@@ -14,8 +14,9 @@ Après une vingtaine d'heures, voici ce que j'ai développer avec la Technologie
 Ayez de la patiente vous ne serez pas décu !
 
 <div style="text-align: center;">
-<img src="assets/images/login_page.jpg" width="40%" alt="Aperçu de la page de connexion : GymTech" style="margin-right: 10px;"/>
-<img src="assets/images/home_page.jpg" width="40%" alt="Aperçu de la page d'acceuil : GymTech"/>
+<img src="assets/images/loading_page.png" width="30%"/>
+<img src="assets/images/login_page.png" width="30%"/>
+<img src="assets/images/home_page.png" width="30%"/>
 </div>
 
 ## 🔥 Fonctionnalités
