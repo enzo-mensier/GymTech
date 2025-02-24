@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'screens/login_screen.dart';
+import 'utils/colors.dart';
+import 'utils/text_styles.dart';
 
 void main() {
   runApp(GymTechApp());
@@ -11,8 +13,9 @@ class GymTechApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primaryColor: Color(0xFF4CAF50),
-        scaffoldBackgroundColor: Colors.white,
+        primaryColor: AppColors.primaryColor,
+        scaffoldBackgroundColor: AppColors.backgroundColor,
+        fontFamily: 'Teko', // Définir Teko comme police par défaut
       ),
       home: LoginScreen(),
     );

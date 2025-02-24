@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../screens/home_screen.dart';
+import '../utils/colors.dart';
+import '../utils/text_styles.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,9 +16,9 @@ class _LoginScreenState extends State<LoginScreen> {
 
   void _handleLogin() {
     if (_formKey.currentState!.validate()) {
-      // Pour l'exemple, nous utilisons des identifiants en dur
-      if (_identifiantController.text == "user" &&
-          _passwordController.text == "password") {
+      // À changer par le BDD plus tard
+      if (_identifiantController.text == "enzo" &&
+          _passwordController.text == "motdepasse") {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),
@@ -24,8 +26,11 @@ class _LoginScreenState extends State<LoginScreen> {
       } else {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
-            content: Text('Identifiants incorrects'),
-            backgroundColor: Colors.red,
+            content: Text(
+              'Identifiants et/ou mot de passe incorrects',
+              style: AppTextStyles.regular.copyWith(color: Colors.white),
+            ),
+            backgroundColor: AppColors.negativeColor,
           ),
         );
       }
@@ -38,7 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
-          child: Form(
+          child: Form( // Entourer avec un Form
             key: _formKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -61,16 +66,17 @@ class _LoginScreenState extends State<LoginScreen> {
                   controller: _identifiantController,
                   decoration: InputDecoration(
                     labelText: 'Identifiant',
-                    labelStyle: TextStyle(color: Colors.grey), // Texte gris par défaut
-                    prefixIcon: Icon(Icons.person, color: Colors.grey), // Icône grise par défaut
+                    labelStyle: AppTextStyles.regular.copyWith(color: AppColors.contrastColor),
+                    prefixIcon: Icon(Icons.person, color: AppColors.contrastColor),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.grey), // Contour gris par défaut
+                      borderSide: BorderSide(color: AppColors.contrastColor),
                     ),
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(color: AppColors.contrastColor),
                     ),
-                    floatingLabelStyle: TextStyle(color: Color(0xFF7ed957)), // Label vert au focus
+                    floatingLabelStyle: AppTextStyles.regular.copyWith(color: AppColors.contrastColor),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -78,6 +84,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                     return null;
                   },
+                  onFieldSubmitted: (_) => _handleLogin(), // Déclencher _handleLogin
                 ),
                 SizedBox(height: 15),
 
@@ -87,14 +94,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   obscureText: !_isPasswordVisible,
                   decoration: InputDecoration(
                     labelText: 'Mot de passe',
-                    labelStyle: TextStyle(color: Colors.grey), // Texte gris par défaut
-                    prefixIcon: Icon(Icons.lock, color: Colors.grey), // Icône grise par défaut
+                    labelStyle: AppTextStyles.regular.copyWith(color: AppColors.contrastColor),
+                    prefixIcon: Icon(Icons.lock, color: AppColors.contrastColor),
                     suffixIcon: IconButton(
                       icon: Icon(
                         _isPasswordVisible
                             ? Icons.visibility
                             : Icons.visibility_off,
-                        color: Colors.grey, // Icône grise par défaut
+                        color: AppColors.contrastColor,
                       ),
                       onPressed: () {
                         setState(() {
@@ -104,12 +111,13 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8),
-                      borderSide: BorderSide(color: Colors.grey), // Contour gris par défaut
+                      borderSide: BorderSide(color: AppColors.contrastColor),
                     ),
                     focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(8),// Contour vert au focus
+                      borderRadius: BorderRadius.circular(8),
+                      borderSide: BorderSide(color: AppColors.contrastColor),
                     ),
-                    floatingLabelStyle: TextStyle(color: Color(0xFF7ed957)), // Label vert au focus
+                    floatingLabelStyle: AppTextStyles.regular.copyWith(color: AppColors.contrastColor),
                   ),
                   validator: (value) {
                     if (value == null || value.isEmpty) {
@@ -117,6 +125,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     }
                     return null;
                   },
+                  onFieldSubmitted: (_) => _handleLogin(), // Déclencher _handleLogin
                 ),
                 SizedBox(height: 24),
 
@@ -124,7 +133,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ElevatedButton(
                   onPressed: _handleLogin,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Color(0xFF4CAF50),
+                    backgroundColor: AppColors.primaryColor,
                     padding: EdgeInsets.symmetric(vertical: 16),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(8),
@@ -132,25 +141,9 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   child: Text(
                     'SE CONNECTER',
-                    style: TextStyle(
-                      color: Color(0xFEFEFEFE),
+                    style: AppTextStyles.bold.copyWith(
+                      color: AppColors.backgroundColor,
                       fontSize: 15,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-
-                SizedBox(height: 16),
-
-                // Lien "Mot de passe oublié"
-                TextButton(
-                  onPressed: () {
-                    // Implémenter la récupération de mot de passe
-                  },
-                  child: Text(
-                    'Mot de passe oublié ?',
-                    style: TextStyle(
-                      color: Color(0xFF4CAF50),
                     ),
                   ),
                 ),

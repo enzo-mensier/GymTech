@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import '../utils/colors.dart';
+import '../utils/text_styles.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -8,15 +10,80 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
 
-  static const Color primaryColor = Color(0xFF4CAF50);
-  static const Color secondaryColor = Color(0xFF9E9E9E);
-
-  static const List<Widget> _pages = <Widget>[
-    Center(child: Text('Page de réservation des créneaux', style: TextStyle(fontSize: 18))),
-    Center(child: Text('Accès aux vestiaires et numéros de casier', style: TextStyle(fontSize: 18))),
-    Center(child: Text('Données utilisateur', style: TextStyle(fontSize: 18))),
-    Center(child: Text('Paramètres', style: TextStyle(fontSize: 18))),
-  ];
+  Widget _buildPage(int index) {
+    switch (index) {
+      case 0:
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Réservation des créneaux',
+                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Contenu de la page de réservation',
+                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
+              ),
+            ],
+          ),
+        );
+      case 1:
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Accès aux vestiaires',
+                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Contenu de la page des vestiaires',
+                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
+              ),
+            ],
+          ),
+        );
+      case 2:
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Données utilisateur',
+                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Contenu de la page des données',
+                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
+              ),
+            ],
+          ),
+        );
+      case 3:
+        return Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Paramètres',
+                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
+              ),
+              const SizedBox(height: 16),
+              Text(
+                'Contenu de la page des paramètres',
+                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
+              ),
+            ],
+          ),
+        );
+      default:
+        return Container();
+    }
+  }
 
   void _onItemTapped(int index) {
     setState(() {
@@ -38,15 +105,15 @@ class _HomeScreenState extends State<HomeScreen> {
             fit: BoxFit.contain,
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: AppColors.backgroundColor,
         elevation: 0,
       ),
-      body: _pages[_selectedIndex],
+      body: _buildPage(_selectedIndex),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.white,
-        selectedItemColor: primaryColor,
-        unselectedItemColor: secondaryColor,
+        backgroundColor: AppColors.backgroundColor,
+        selectedItemColor: AppColors.primaryColor,
+        unselectedItemColor: AppColors.contrastColor,
         showSelectedLabels: true,
         showUnselectedLabels: false,
         elevation: 10,
