@@ -143,7 +143,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     'SE CONNECTER',
                     style: AppTextStyles.bold.copyWith(
                       color: AppColors.backgroundColor,
-                      fontSize: 15,
+                      fontSize: 17,
                     ),
                   ),
                 ),
