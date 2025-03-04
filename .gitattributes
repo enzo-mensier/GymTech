@@ -1,4 +1,0 @@
-*.dart linguist-language=Dart
-*.g.dart linguist-vendored
-*.pb.dart linguist-vendored
-*.freezed.dart linguist-vendored
