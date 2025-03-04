@@ -18,7 +18,7 @@ class _LoginScreenState extends State<LoginScreen> {
     if (_formKey.currentState!.validate()) {
       // À changer par le BDD plus tard
       if (_identifiantController.text == "enzo" &&
-          _passwordController.text == "motdepasse") {
+          _passwordController.text == "enzo") {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),
