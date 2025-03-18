@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import '../utils/colors.dart';
-import '../utils/text_styles.dart';
+import 'calendrier_screen.dart';
+import 'casiers_screen.dart';
+import 'utilisateurs_screen.dart';
+import 'parametres_screen.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
@@ -13,73 +18,13 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget _buildPage(int index) {
     switch (index) {
       case 0:
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Réservation des créneaux',
-                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Contenu de la page de réservation',
-                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
-              ),
-            ],
-          ),
-        );
+        return CalendrierScreen();
       case 1:
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Accès aux vestiaires',
-                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Contenu de la page des vestiaires',
-                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
-              ),
-            ],
-          ),
-        );
+        return CasiersScreen();
       case 2:
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Données utilisateur',
-                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Contenu de la page des données',
-                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
-              ),
-            ],
-          ),
-        );
+        return UtilisateursScreen();
       case 3:
-        return Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                'Paramètres',
-                style: AppTextStyles.bold.copyWith(fontSize: 24, color: AppColors.textColor),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Contenu de la page des paramètres',
-                style: AppTextStyles.regular.copyWith(color: AppColors.textColor),
-              ),
-            ],
-          ),
-        );
+        return ParametresScreen();
       default:
         return Container();
     }
