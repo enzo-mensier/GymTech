@@ -32,7 +32,7 @@ Ayez de la patiente vous ne serez pas décu !
 - **HTML/CSS/JavaScript** : Langage de développement web, utile à la conception de l'interface web, possibilité d'utilisation d'un Framework.
 - **Flutter & Dart** : Langage de programmation et/ou Framework à déterminé pour concevoir l'application mobile.
 
-## 🎯Objectifs
+## 🎯 Objectifs
 
 Ce projet vise à retravailler & renforcer nos compétences relatifs à notre formation, en particulier en **Systèmes & Maintenance Informatique**, **Développement d'applications mobiles** et **Développement web** tout en permettant de réaliser un projet complet, dynamique et interactif. L'objectif est de pratiquer les fondamentaux des compétences requises à l'issu de notre formation et de perfectionner nos capacités à créer des applications interactives fonctionnels dans un but précis.
 
