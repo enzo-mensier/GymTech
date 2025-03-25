@@ -13,10 +13,10 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryColor, // Couleur verte (corrigé)
-        foregroundColor: AppColors.backgroundColor, // Couleur blanche pour le texte (corrigé)
+        backgroundColor: AppColors.primaryColor, // Arriere Plan
+        foregroundColor: AppColors.backgroundColor, // Texte
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8), // Coins arrondis
+          borderRadius: BorderRadius.circular(8), // Coins
         ),
         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
       ),

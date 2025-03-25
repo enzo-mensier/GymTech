@@ -1,11 +1,15 @@
-const express = require('express');
-const router = express.Router();
-const casiersController = require('../controllers/casiersController');
+class Casiers {
+  final int idSalle;
+  final String nomSalle;
+  // ... autres propriétés
 
-router.get('/', casiersController.getCasiers);
-router.get('/:id', casiersController.getCasiersById);
-router.post('/', casiersController.createCasiers);
-router.put('/:id', casiersController.updateCasiers);
-router.delete('/:id', casiersController.deleteCasiers);
+  Casiers({required this.idSalle, required this.nomSalle, /* ... */});
 
-module.exports = router;
+  factory Casiers.fromJson(Map<String, dynamic> json) {
+    return Casiers(
+      idSalle: json['ID_SALLE'],
+      nomSalle: json['NOM_SALLE'],
+      // ... autres propriétés
+    );
+  }
+}

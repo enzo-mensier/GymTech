@@ -5,7 +5,7 @@ import '../models/casier.dart';
 import '../models/creneau.dart';
 
 class ApiService {
-  final String baseUrl = 'http://192.168.1.7:3001/api'; // Remplacez par votre adresse IP
+  final String baseUrl = 'http://192.168.1.7:3002/api'; // Remplacez par votre adresse IP
 
   // Méthodes pour les utilisateurs
   Future<List<Utilisateur>> getUtilisateurs() async {

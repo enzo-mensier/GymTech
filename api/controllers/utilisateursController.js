@@ -1,73 +1,73 @@
-const db = require('../utils/db');
+const pool = require('../utils/db');
 
-exports.getUtilisateurs = (req, res) => {
-  db.query('SELECT * FROM utilisateurs', (err, results) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Erreur serveur' });
-      return;
-    }
-    res.json(results);
-  });
-};
+async function getAllUtilisateurs(req, res) {
+  try {
+    const [rows] = await pool.query('SELECT * FROM utilisateurs');
+    res.json(rows);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erreur lors de la récupération des utilisateurs' });
+  }
+}
 
-exports.getUtilisateurById = (req, res) => {
-  const userId = req.params.id;
-  db.query('SELECT * FROM utilisateurs WHERE id_utilisateur = ?', [userId], (err, results) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Erreur serveur' });
-      return;
+async function getUtilisateurById(req, res) {
+  try {
+    const [rows] = await pool.query('SELECT * FROM utilisateurs WHERE id = ?', [req.params.id]);
+    if (rows.length === 0) {
+      res.status(404).json({ message: 'Utilisateur non trouvé' });
+    } else {
+      res.json(rows[0]);
     }
-    if (results.length === 0) {
-      res.status(404).json({ error: 'Utilisateur non trouvé' });
-      return;
-    }
-    res.json(results[0]);
-  });
-};
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erreur lors de la récupération de l\'utilisateur' });
+  }
+}
 
-exports.createUser = (req, res) => {
-  const { nom, prenom, email, mot_de_passe, genre, date_naissance } = req.body;
-  db.query(
-    'INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe, genre, date_naissance) VALUES (?, ?, ?, ?, ?, ?)',
-    [nom, prenom, email, mot_de_passe, genre, date_naissance],
-    (err, result) => {
-      if (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Erreur serveur' });
-        return;
-      }
-      res.status(201).json({ message: 'Utilisateur créé', id: result.insertId });
-    }
-  );
-};
+async function createUtilisateur(req, res) {
+  try {
+    const { nom, prenom, email, mot_de_passe } = req.body; // Adaptez les champs à votre table
+    const [result] = await pool.query('INSERT INTO utilisateurs (nom, prenom, email, mot_de_passe) VALUES (?, ?, ?, ?)', [nom, prenom, email, mot_de_passe]);
+    res.status(201).json({ message: 'Utilisateur créé avec succès', id: result.insertId });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erreur lors de la création de l\'utilisateur' });
+  }
+}
 
-exports.updateUser = (req, res) => {
-  const userId = req.params.id;
-  const { nom, prenom, email, mot_de_passe, genre, date_naissance } = req.body;
-  db.query(
-    'UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, mot_de_passe = ?, genre = ?, date_naissance = ? WHERE id_utilisateur = ?',
-    [nom, prenom, email, mot_de_passe, genre, date_naissance, userId],
-    (err) => {
-      if (err) {
-        console.error(err);
-        res.status(500).json({ error: 'Erreur serveur' });
-        return;
-      }
-      res.json({ message: 'Utilisateur mis à jour' });
+async function updateUtilisateur(req, res) {
+  try {
+    const { nom, prenom, email, mot_de_passe } = req.body; // Adaptez les champs à votre table
+    const [result] = await pool.query('UPDATE utilisateurs SET nom = ?, prenom = ?, email = ?, mot_de_passe = ? WHERE id = ?', [nom, prenom, email, mot_de_passe, req.params.id]);
+    if (result.affectedRows === 0) {
+      res.status(404).json({ message: 'Utilisateur non trouvé' });
+    } else {
+      res.json({ message: 'Utilisateur mis à jour avec succès' });
     }
-  );
-};
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erreur lors de la mise à jour de l\'utilisateur' });
+  }
+}
 
-exports.deleteUser = (req, res) => {
-  const userId = req.params.id;
-  db.query('DELETE FROM utilisateurs WHERE id_utilisateur = ?', [userId], (err) => {
-    if (err) {
-      console.error(err);
-      res.status(500).json({ error: 'Erreur serveur' });
-      return;
+async function deleteUtilisateur(req, res) {
+  try {
+    const [result] = await pool.query('DELETE FROM utilisateurs WHERE id = ?', [req.params.id]);
+    if (result.affectedRows === 0) {
+      res.status(404).json({ message: 'Utilisateur non trouvé' });
+    } else {
+      res.json({ message: 'Utilisateur supprimé avec succès' });
     }
-    res.json({ message: 'Utilisateur supprimé' });
-  });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Erreur lors de la suppression de l\'utilisateur' });
+  }
+}
+
+module.exports = {
+  getAllUtilisateurs,
+  getUtilisateurById,
+  createUtilisateur,
+  updateUtilisateur,
+  deleteUtilisateur,
 };

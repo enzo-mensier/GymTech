@@ -1,11 +1,17 @@
-const express = require('express');
-const router = express.Router();
-const utilisateursController = require('../controllers/utilisateursController');
+class Utilisateur {
+  final int? idUser;
+  final String nomUser;
+  final String prenomUser;
+  // ... autres propriétés
 
-router.get('/', utilisateursController.getUtilisateurs);
-router.get('/:id', utilisateursController.getUtilisateurById);
-router.post('/', utilisateursController.createUser);
-router.put('/:id', utilisateursController.updateUser);
-router.delete('/:id', utilisateursController.deleteUser);
+  Utilisateur({required this.idUser, required this.nomUser, required this.prenomUser, /* ... */});
 
-module.exports = router;
+  factory Utilisateur.fromJson(Map<String, dynamic> json) {
+    return Utilisateur(
+      idUser: json['ID_USER'],
+      nomUser: json['NOM_USER'],
+      prenomUser: json['PRENOM_USER'],
+      // ... autres propriétés
+    );
+  }
+}

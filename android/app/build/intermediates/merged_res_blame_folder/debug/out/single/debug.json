@@ -1,27 +1,27 @@
 [
     {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-hdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-hdpi\\ic_launcher.png"
+    },
+    {
         "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "com.example.gymtech.app-main-42:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "com.example.gymtech.app-main-42:/mipmap-xhdpi/ic_launcher_adaptive_fore.png"
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-mdpi\\ic_launcher_adaptive_fore.png"
     },
     {
-        "merged": "com.example.gymtech.app-merged_res-40:/drawable-v21_launch_background.xml.flat",
-        "source": "com.example.gymtech.app-main-42:/drawable-v21/launch_background.xml"
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xxxhdpi\\ic_launcher_adaptive_fore.png"
     },
     {
-        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "com.example.gymtech.app-main-42:/mipmap-xxxhdpi/ic_launcher_adaptive_fore.png"
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xxhdpi\\ic_launcher_adaptive_fore.png"
     },
     {
-        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "com.example.gymtech.app-main-42:/mipmap-xxhdpi/ic_launcher_adaptive_fore.png"
-    },
-    {
-        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
-        "source": "com.example.gymtech.app-main-42:/mipmap-mdpi/ic_launcher_adaptive_fore.png"
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-hdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-hdpi\\ic_launcher_adaptive_fore.png"
     },
     {
         "merged": "com.example.gymtech.app-merged_res-40:/mipmap-mdpi_ic_launcher.png.flat",
@@ -32,16 +32,16 @@
         "source": "com.example.gymtech.app-main-42:/mipmap-mdpi/ic_launcher_adaptive_back.png"
     },
     {
-        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.example.gymtech.app-main-42:/mipmap-hdpi/ic_launcher.png"
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.gymtech.app-main-42:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xhdpi\\ic_launcher_adaptive_back.png"
     },
     {
-        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.example.gymtech.app-main-42:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\drawable-v21_launch_background.xml.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\drawable-v21\\launch_background.xml"
     },
     {
         "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xhdpi_ic_launcher_adaptive_back.png.flat",
@@ -66,5 +66,65 @@
     {
         "merged": "com.example.gymtech.app-merged_res-40:/mipmap-hdpi_ic_launcher_adaptive_back.png.flat",
         "source": "com.example.gymtech.app-main-42:/mipmap-hdpi/ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.example.gymtech.app-main-42:/mipmap-xhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xxxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.example.gymtech.app-main-42:/mipmap-xxxhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xxhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.example.gymtech.app-main-42:/mipmap-xxhdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-mdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "com.example.gymtech.app-main-42:/mipmap-mdpi/ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-mdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.example.gymtech.app-main-42:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xhdpi_ic_launcher_adaptive_fore.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xhdpi\\ic_launcher_adaptive_fore.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xxxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "com.example.gymtech.app-merged_res-40:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.example.gymtech.app-main-42:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-hdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-hdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-mdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-mdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xxhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xxhdpi\\ic_launcher_adaptive_back.png"
+    },
+    {
+        "merged": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-merged_res-40:\\mipmap-xxxhdpi_ic_launcher_adaptive_back.png.flat",
+        "source": "C:\\Users\\enzom\\.gradle\\daemon\\8.2\\com.example.gymtech.app-main-42:\\mipmap-xxxhdpi\\ic_launcher_adaptive_back.png"
     }
 ]
