@@ -15,7 +15,7 @@ class GymTechApp extends StatelessWidget {
       theme: ThemeData(
         primaryColor: AppColors.primaryColor,
         scaffoldBackgroundColor: AppColors.backgroundColor,
-        fontFamily: 'Teko', // Définir Teko comme police par défaut
+        fontFamily: 'Teko',
       ),
       home: LoginScreen(),
     );

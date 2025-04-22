@@ -1,44 +1,60 @@
+buildscript {
+    // Configuration pour les dépendances de Gradle lui-même (plugins, etc.)
+    repositories {
+        google() // Référentiel Google pour les dépendances Android
+        mavenCentral() // Référentiel Maven Central pour les dépendances Java/Kotlin
+    }
+    dependencies {
+        // Dépendance pour le plugin Android Gradle
+        classpath 'com.android.tools.build:gradle:8.2.2'
+        // Dépendance pour le plugin Kotlin Gradle
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.22'
+    }
+}
+
 plugins {
-    id "com.android.application"
-    id "kotlin-android"
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
-    id "dev.flutter.flutter-gradle-plugin"
+    // Plugins utilisés par le projet Android
+    id "com.android.application" // Plugin pour construire une application Android
+    id "kotlin-android" // Plugin pour le support de Kotlin
+    id "dev.flutter.flutter-gradle-plugin" // Plugin pour l'intégration de Flutter
 }
 
 android {
-    namespace = "com.example.gymtech"
-    compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    // Configuration spécifique à Android
+    namespace = "com.example.gymtech" // Identifiant unique de l'application
+    compileSdkVersion = flutter.compileSdkVersion // Version du SDK Android pour la compilation (définie par Flutter)
+    ndkVersion = flutter.ndkVersion // Version du NDK (Native Development Kit) (définie par Flutter)
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        // Options de compilation pour Java
+        sourceCompatibility = JavaVersion.VERSION_1_8 // Compatibilité avec Java 8
+        targetCompatibility = JavaVersion.VERSION_1_8 // Compatibilité avec Java 8
     }
 
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8
+        // Options de compilation pour Kotlin
+        jvmTarget = JavaVersion.VERSION_1_8 // Cible JVM pour Kotlin (Java 8)
     }
 
     defaultConfig {
-        // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId = "com.example.gymtech"
-        // You can update the following values to match your application needs.
-        // For more information, see: https://flutter.dev/to/review-gradle-config.
-        minSdk = flutter.minSdkVersion
-        targetSdk = flutter.targetSdkVersion
-        versionCode = flutter.versionCode
-        versionName = flutter.versionName
+        // Configuration par défaut de l'application
+        applicationId = "com.example.gymtech" // Identifiant unique de l'application
+        minSdkVersion = flutter.minSdkVersion // Version minimale du SDK Android supportée (définie par Flutter)
+        targetSdkVersion = flutter.targetSdkVersion // Version cible du SDK Android (définie par Flutter)
+        versionCode = flutter.versionCode // Numéro de version de l'application (définie par Flutter)
+        versionName = flutter.versionName // Nom de version de l'application (définie par Flutter)
     }
 
     buildTypes {
+        // Configuration des types de construction (debug, release, etc.)
         release {
-            // TODO: Add your own signing config for the release build.
-            // Signing with the debug keys for now, so `flutter run --release` works.
-            signingConfig = signingConfigs.debug
+            // Configuration pour la version de publication
+            signingConfig = signingConfigs.debug // Utilise la configuration de signature de débogage (à remplacer pour la production)
         }
     }
 }
 
 flutter {
-    source = "../.."
+    // Configuration spécifique à Flutter
+    source = "../.." // Chemin vers le code source Flutter
 }

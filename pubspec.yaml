@@ -9,13 +9,15 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  material_symbols_icons: ^4.2719.0
-  cupertino_icons: ^1.0.8
+  http: ^1.2.0 # ou la dernière version stable
+  shared_preferences: ^2.2.0 # ou la dernière version stable
+  material_symbols_icons: ^4.0.0 # ou la dernière version stable
+  cupertino_icons: ^1.0.0 # ou la dernière version stable
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^5.0.0 # ou la dernière version stable
 
 flutter:
   uses-material-design: true

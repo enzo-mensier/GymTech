@@ -1,54 +1,23 @@
 const express = require('express');
-const mysql = require('mysql2');
 const cors = require('cors');
+const utilisateursRoutes = require('./routes/utilisateurs');
+const reservationsRoutes = require('./routes/reservations');
+const casiersRoutes = require('./routes/casiers');
+const creneauxRoutes = require('./routes/creneaux');
+const authRoutes = require('./routes/auth'); // Ajout des routes d'authentification
+
 const app = express();
-const port = 3001; // Port du localhost
+const port = 3002;
 
-// Configurer CORS
 app.use(cors());
+app.use(express.json());
 
-// Créer la connexion à la base de données MySQL
-const db = mysql.createConnection({
-  host: '127.0.0.1', // ou l'adresse de ton serveur MySQL
-  user: 'root', // utilisateur de la base de données
-  password: '', // mot de passe de l'utilisateur
-  database: 'gymtech', // nom de la base de données
-});
+app.use('/api/utilisateurs', utilisateursRoutes);
+app.use('/api/reservations', reservationsRoutes);
+app.use('/api/casiers', casiersRoutes);
+app.use('/api/creneaux', creneauxRoutes);
+app.use('/api/auth', authRoutes); // Utilisation des routes d'authentification
 
-// Vérifier la connexion à la base de données
-db.connect((err) => {
-  if (err) {
-    console.error('Erreur de connexion à la base de données: ' + err.stack);
-    return;
-  }
-  console.log('Connecté à la base de données MySQL');
-});
-
-// Route pour récupérer les utilisateurs
-app.get('/api/utilisateurs', (req, res) => {
-  db.query('SELECT * FROM utilisateurs', (err, results) => {
-    if (err) {
-      console.error('Erreur lors de la récupération des utilisateurs:', err);
-      res.status(500).send('Erreur serveur');
-      return;
-    }
-    res.json(results); // Retourne les résultats au format JSON
-  });
-});
-
-// Route pour récupérer d'autres données comme les casiers
-app.get('/api/casiers', (req, res) => {
-  db.query('SELECT * FROM casiers', (err, results) => {
-    if (err) {
-      console.error('Erreur lors de la récupération des casiers:', err);
-      res.status(500).send('Erreur serveur');
-      return;
-    }
-    res.json(results);
-  });
-});
-
-// Démarrer le serveur
 app.listen(port, () => {
-  console.log(`Serveur Node.js démarré sur http://localhost:${port}`);
+  console.log(`Serveur démarré sur le port ${port}`);
 });
