@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../screens/home_screen.dart';
 import '../utils/colors.dart';
 import '../utils/text_styles.dart';
+import '../services/auth_service.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -14,20 +15,28 @@ class _LoginScreenState extends State<LoginScreen> {
   final _passwordController = TextEditingController();
   bool _isPasswordVisible = false;
 
-  void _handleLogin() {
+  Future<void> _handleLogin() async {
     if (_formKey.currentState!.validate()) {
-      // TODO : À changer par les données utilisateur depuis la BDD
-      if (_identifiantController.text == "enzo" &&
-          _passwordController.text == "enzo") {
+      try {
+        final authService = AuthService();
+        final response = await authService.login(
+          _identifiantController.text,
+          _passwordController.text,
+        );
+
+        // Stocker le token JWT
+        final String token = response['token'];
+        // TODO: Stocker le token de manière sécurisée (SharedPreferences)
+
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => HomeScreen()),
         );
-      } else {
+      } catch (e) {
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(
             content: Text(
-              'Identifiants et/ou mot de passe incorrects',
+              'Erreur de connexion: ${e.toString()}',
               style: AppTextStyles.regular.copyWith(color: Colors.white),
             ),
             backgroundColor: AppColors.negativeColor,

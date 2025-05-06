@@ -1,19 +1,62 @@
-class Creneaux {
-  final int idCreneau;
-  final DateTime dateCreneau;
-  final TimeOfDay heureDebut;
-  final TimeOfDay heureFin;
-  // ... autres propriétés
+const express = require('express');
+const router = express.Router();
+const pool = require('../utils/db');
 
-  Creneaux({required this.idCreneau, required this.dateCreneau, required this.heureDebut, required this.heureFin, /* ... */});
+class Creneau {
+  constructor(idCreneau, dateCreneau, heureDebut, heureFin) {
+    this.idCreneau = idCreneau;
+    this.dateCreneau = dateCreneau;
+    this.heureDebut = heureDebut;
+    this.heureFin = heureFin;
+  }
 
-  factory Creneaux.fromJson(Map<String, dynamic> json) {
-    return Creneaux(
-      idCreneau: json['ID_CRENEAU'],
-      dateCreneau: DateTime.parse(json['DATE_CRENEAU']),
-      heureDebut: TimeOfDay(hour: int.parse(json['HEURE_DEBUT'].split(':')[0]), minute: int.parse(json['HEURE_DEBUT'].split(':')[1])),
-      heureFin: TimeOfDay(hour: int.parse(json['HEURE_FIN'].split(':')[0]), minute: int.parse(json['HEURE_FIN'].split(':')[1])),
-      // ... autres propriétés
+  static fromJson(json) {
+    return new Creneau(
+      json.ID_CRENEAU,
+      json.DATE_CRENEAU,
+      json.HEURE_DEBUT,
+      json.HEURE_FIN
     );
   }
 }
+
+// Routes
+router.get('/', async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM creneaux');
+    const creneaux = rows.map(row => Creneau.fromJson(row));
+    res.json(creneaux);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.get('/:id', async (req, res) => {
+  try {
+    const [rows] = await pool.query('SELECT * FROM creneaux WHERE ID_CRENEAU = ?', [req.params.id]);
+    if (rows.length === 0) {
+      res.status(404).json({ error: 'Créneau non trouvé' });
+    } else {
+      const creneau = Creneau.fromJson(rows[0]);
+      res.json(creneau);
+    }
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+router.post('/', async (req, res) => {
+  try {
+    const { dateCreneau, heureDebut, heureFin } = req.body;
+    const [result] = await pool.query(
+      'INSERT INTO creneaux (DATE_CRENEAU, HEURE_DEBUT, HEURE_FIN) VALUES (?, ?, ?)',
+      [dateCreneau, heureDebut, heureFin]
+    );
+    const creneau = new Creneau(result.insertId, dateCreneau, heureDebut, heureFin);
+    res.status(201).json(creneau);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+module.exports = router;

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gymtech.app-mergeDebugResources-38:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.gymtech.app-mergeDebugResources-2:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\src\\main\\res\\values-night\\styles.xml",
+                    "source": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\src\\main\\res\\values-night\\styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

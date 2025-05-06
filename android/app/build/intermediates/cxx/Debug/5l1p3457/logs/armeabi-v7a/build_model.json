@@ -6,9 +6,9 @@
     "deprecated": false,
     "default": true
   },
-  "cxxBuildFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\.cxx\\Debug\\5l1p3457\\armeabi-v7a",
-  "soFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457\\obj\\armeabi-v7a",
-  "soRepublishFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build\\intermediates\\cmake\\profile\\obj\\armeabi-v7a",
+  "cxxBuildFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\.cxx\\Debug\\5l1p3457\\armeabi-v7a",
+  "soFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457\\obj\\armeabi-v7a",
+  "soRepublishFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build\\intermediates\\cmake\\profile\\obj\\armeabi-v7a",
   "abiPlatformVersion": 21,
   "cmake": {
     "effectiveConfiguration": {
@@ -35,12 +35,12 @@
     "implicitBuildTargetSet": [],
     "cmakeSettingsConfiguration": "android-gradle-plugin-predetermined-name",
     "module": {
-      "cxxFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\.cxx",
-      "intermediatesBaseFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build\\intermediates",
-      "intermediatesFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build\\intermediates\\cxx",
+      "cxxFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\.cxx",
+      "intermediatesBaseFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build\\intermediates",
+      "intermediatesFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build\\intermediates\\cxx",
       "gradleModulePathName": ":app",
-      "moduleRootFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app",
-      "moduleBuildFile": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build.gradle",
+      "moduleRootFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app",
+      "moduleBuildFile": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build.gradle",
       "makeFile": "C:\\flutter\\packages\\flutter_tools\\gradle\\src\\main\\groovy\\CMakeLists.txt",
       "buildSystem": "CMAKE",
       "ndkFolder": "C:\\Users\\enzom\\AppData\\Local\\Android\\sdk\\ndk\\26.3.11579264",
@@ -126,7 +126,7 @@
         "SYSTEM": {}
       },
       "project": {
-        "rootBuildGradleFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android",
+        "rootBuildGradleFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android",
         "sdkFolder": "C:\\Users\\enzom\\AppData\\Local\\Android\\sdk",
         "isBuildOnlyTargetAbiEnabled": true,
         "isCmakeBuildCohabitationEnabled": false,
@@ -145,7 +145,7 @@
   "buildSettings": {
     "environmentVariables": []
   },
-  "prefabFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\.cxx\\Debug\\5l1p3457\\prefab\\armeabi-v7a",
+  "prefabFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\.cxx\\Debug\\5l1p3457\\prefab\\armeabi-v7a",
   "isActiveAbi": true,
   "fullConfigurationHash": "5l1p34573t5lh1m3w59758141d652g1l696cq837d2w1zi4n3g3c6x502z",
   "fullConfigurationHashKey": "# Values used to calculate the hash in this folder name.\n# Should not depend on the absolute path of the project itself.\n#   - AGP: 8.1.0.\n#   - $NDK is the path to NDK 26.3.11579264.\n#   - $PROJECT is the path to the parent folder of the root Gradle build file.\n#   - $ABI is the ABI to be built with. The specific value doesn\u0027t contribute to the value of the hash.\n#   - $HASH is the hash value computed from this text.\n#   - $CMAKE is the path to CMake 3.22.1.\n#   - $NINJA is the path to Ninja.\n-HC:/flutter/packages/flutter_tools/gradle/src/main/groovy\n-DCMAKE_SYSTEM_NAME\u003dAndroid\n-DCMAKE_EXPORT_COMPILE_COMMANDS\u003dON\n-DCMAKE_SYSTEM_VERSION\u003d21\n-DANDROID_PLATFORM\u003dandroid-21\n-DANDROID_ABI\u003d$ABI\n-DCMAKE_ANDROID_ARCH_ABI\u003d$ABI\n-DANDROID_NDK\u003d$NDK\n-DCMAKE_ANDROID_NDK\u003d$NDK\n-DCMAKE_TOOLCHAIN_FILE\u003d$NDK/build/cmake/android.toolchain.cmake\n-DCMAKE_MAKE_PROGRAM\u003d$NINJA\n-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003d$PROJECT/app/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003d$PROJECT/app/build/intermediates/cxx/Debug/$HASH/obj/$ABI\n-DCMAKE_BUILD_TYPE\u003dDebug\n-B$PROJECT/app/.cxx/Debug/$HASH/$ABI\n-GNinja\n-Wno-dev\n--no-warn-unused-cli",
@@ -161,13 +161,13 @@
     "-DCMAKE_ANDROID_NDK\u003dC:\\Users\\enzom\\AppData\\Local\\Android\\sdk\\ndk\\26.3.11579264",
     "-DCMAKE_TOOLCHAIN_FILE\u003dC:\\Users\\enzom\\AppData\\Local\\Android\\sdk\\ndk\\26.3.11579264\\build\\cmake\\android.toolchain.cmake",
     "-DCMAKE_MAKE_PROGRAM\u003dC:\\Users\\enzom\\AppData\\Local\\Android\\sdk\\cmake\\3.22.1\\bin\\ninja.exe",
-    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457\\obj\\armeabi-v7a",
-    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457\\obj\\armeabi-v7a",
+    "-DCMAKE_LIBRARY_OUTPUT_DIRECTORY\u003dC:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457\\obj\\armeabi-v7a",
+    "-DCMAKE_RUNTIME_OUTPUT_DIRECTORY\u003dC:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457\\obj\\armeabi-v7a",
     "-DCMAKE_BUILD_TYPE\u003dDebug",
-    "-BC:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\.cxx\\Debug\\5l1p3457\\armeabi-v7a",
+    "-BC:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\.cxx\\Debug\\5l1p3457\\armeabi-v7a",
     "-GNinja",
     "-Wno-dev",
     "--no-warn-unused-cli"
   ],
-  "intermediatesParentFolder": "C:\\Users\\enzom\\StudioProjects\\GymTech\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457"
+  "intermediatesParentFolder": "C:\\BTS CIEL-IR\\PROJET-GYMTECH-B2CIEL\\app_following\\GymTech-v1.0\\android\\app\\build\\intermediates\\cxx\\Debug\\5l1p3457"
 }

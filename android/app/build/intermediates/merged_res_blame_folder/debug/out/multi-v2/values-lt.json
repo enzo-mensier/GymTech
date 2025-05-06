@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.gymtech.app-mergeDebugResources-38:/values-lt/values-lt.xml",
+            "outputFile": "com.example.gymtech.app-mergeDebugResources-2:/values-lt/values-lt.xml",
             "map": [
                 {
                     "source": "C:\\Users\\enzom\\.gradle\\caches\\transforms-3\\ba38ccded8635c6ff74ef6abc9dce11a\\transformed\\preference-1.2.1\\res\\values-lt\\values-lt.xml",
