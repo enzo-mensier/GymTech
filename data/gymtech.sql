@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le : mar. 06 mai 2025 à 06:30
+-- Généré le : lun. 12 mai 2025 à 09:41
 -- Version du serveur : 9.1.0
 -- Version de PHP : 8.3.14
 
@@ -176,9 +176,9 @@ CREATE TABLE IF NOT EXISTS `utilisateurs` (
 --
 
 INSERT INTO `utilisateurs` (`id_utilisateur`, `nom`, `prenom`, `email`, `mot_de_passe`, `genre`, `date_naissance`, `date_inscription`) VALUES
-(1, 'Doe', 'John', 'johndoe@example.com', 'password_hash', 'Homme', '1995-05-15', '2025-02-04 07:52:57'),
-(2, 'Smith', 'Jane', 'janesmith@example.com', 'password_hash2', 'Femme', '1990-03-10', '2025-02-04 07:00:00'),
-(3, 'Johnson', 'Alex', 'alexjohnson@example.com', 'password_hash3', 'Autre', '1993-08-25', '2025-02-04 07:05:00');
+(1, 'Doe', 'John', 'johndoe@example.com', '$2b$10$EDLJYlOJBJaZ0tLB2iPpI.ixqm8GoXUXIzlLrlwHk/i3vrLWukhgO', 'Homme', '1995-05-15', '2025-02-04 07:52:57'),
+(2, 'Smith', 'Jane', 'janesmith@example.com', '$2b$10$ubbs9L7xMPX2XLbBvPcmR.OKxYmqPFNnKw3Yuo05.J7IugzZTA6KC', 'Femme', '1990-03-10', '2025-02-04 07:00:00'),
+(3, 'Johnson', 'Alex', 'alexjohnson@example.com', '$2b$10$sUcdXfsIjPOzNl.1RzvKhuUTdbrCjUCWS0nWzdumRHWJTfHImLmrG', 'Autre', '1993-08-25', '2025-02-04 07:05:00');
 
 -- --------------------------------------------------------
 

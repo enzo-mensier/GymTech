@@ -1,43 +1,49 @@
+import 'package:flutter/material.dart';
+import '../models/genre.dart';
+
 class Utilisateur {
-  final int id;
-  final String nom;
-  final String prenom;
-  final String email;
-  final String motDePasse;
-  final String genre;
-  final String dateNaissance;
+  final int idUser;
+  final String nomUser;
+  final String prenomUser;
+  final String emailUser;
+  final String motDePasseUser;
+  final Genre genreUser;
+  final String dateNaissanceUser;
 
   Utilisateur({
-    required this.id,
-    required this.nom,
-    required this.prenom,
-    required this.email,
-    required this.motDePasse,
-    required this.genre,
-    required this.dateNaissance,
+    this.idUser = 0,
+    required this.nomUser,
+    required this.prenomUser,
+    required this.emailUser,
+    required this.motDePasseUser,
+    required this.genreUser,
+    required this.dateNaissanceUser,
   });
 
   factory Utilisateur.fromJson(Map<String, dynamic> json) {
     return Utilisateur(
-      id: json['id_utilisateur'],
-      nom: json['nom'],
-      prenom: json['prenom'],
-      email: json['email'],
-      motDePasse: json['mot_de_passe'],
-      genre: json['genre'],
-      dateNaissance: json['date_naissance'],
+      idUser: json['ID_USER'] ?? 0,
+      nomUser: json['NOM_USER'] ?? '',
+      prenomUser: json['PRENOM_USER'] ?? '',
+      emailUser: json['EMAIL_USER'] ?? '',
+      motDePasseUser: json['MOT_DE_PASSE_USER'] ?? '',
+      genreUser: Genre.fromValue(json['GENRE_USER'] ?? 'H'),
+      dateNaissanceUser: json['DATE_NAISSANCE_USER'] ?? '',
     );
   }
 
   Map<String, dynamic> toJson() {
+    // Convertir la date DD/MM/YYYY en YYYY-MM-DD
+    final dateParts = dateNaissanceUser.split('/');
+    final formattedDate = '${dateParts[2]}-${dateParts[1]}-${dateParts[0]}';
+    
     return {
-      'id_utilisateur': id,
-      'nom': nom,
-      'prenom': prenom,
-      'email': email,
-      'mot_de_passe': motDePasse,
-      'genre': genre,
-      'date_naissance': dateNaissance,
+      'nomUser': nomUser,
+      'prenomUser': prenomUser,
+      'emailUser': emailUser,
+      'motDePasseUser': motDePasseUser,
+      'genreUser': genreUser.value,
+      'dateNaissanceUser': formattedDate,
     };
   }
 }

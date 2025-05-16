@@ -1,0 +1,13 @@
+DO :
+page de connexion
+    connecté à la base de données
+    hashage
+interface NoData
+
+TO DO :
+page de connexion
+    création de compte
+
+page d'acceuil
+    reservation
+    donnée client

@@ -3,6 +3,7 @@ import '../screens/home_screen.dart';
 import '../utils/colors.dart';
 import '../utils/text_styles.dart';
 import '../services/auth_service.dart';
+import '../screens/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -136,7 +137,24 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                   onFieldSubmitted: (_) => _handleLogin(), // Déclencher _handleLogin
                 ),
-                SizedBox(height: 24),
+                SizedBox(height: 15),
+
+                // Lien vers l'inscription
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => RegisterScreen()),
+                    );
+                  },
+                  child: Text(
+                    'Pas encore inscrit ? Créer un compte',
+                    style: AppTextStyles.regular.copyWith(
+                      color: AppColors.contrastColor,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 15),
 
                 // Bouton de connexion
                 ElevatedButton(

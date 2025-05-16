@@ -1,8 +1,8 @@
 module.exports = {
-  jwtSecret: 'clé_secrète', // À changez ceci par une clé sécurisée
+  jwtSecret: 'clé_secrète',
   port: 3002,
   database: {
-    host: 'localhost',
+    host: '127.0.0.1',
     user: 'root',
     password: '',
     database: 'gymtech'

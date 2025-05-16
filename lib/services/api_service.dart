@@ -43,7 +43,7 @@ class ApiService {
 
   Future<void> updateUser(Utilisateur utilisateur) async {
     final response = await http.put(
-      Uri.parse('$baseUrl/utilisateurs/${utilisateur.id}'),
+      Uri.parse('$baseUrl/utilisateurs/${utilisateur.idUser}'),
       headers: {'Content-Type': 'application/json'},
       body: json.encode(utilisateur.toJson()),
     );

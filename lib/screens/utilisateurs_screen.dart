@@ -22,8 +22,8 @@ class UtilisateursScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               Utilisateur utilisateur = snapshot.data![index];
               return ListTile(
-                title: Text('${utilisateur.prenom} ${utilisateur.nom}'),
-                subtitle: Text(utilisateur.email),
+                title: Text('${utilisateur.prenomUser} ${utilisateur.nomUser}'),
+                subtitle: Text(utilisateur.emailUser),
               );
             },
           );
